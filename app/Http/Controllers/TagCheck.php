@@ -21,7 +21,8 @@ class TagCheck extends Controller
 
             $payload    =   [
                 'bib'           =>  $data->bib ,
-                'name'          =>  $data->name ,
+                'firstName'     =>  $data->firstName ,
+                'lastName'      =>  $data->lastName ,
                 'time'          =>  $data->finishtime ,
                 'contest'       =>  strtoupper($data->gender) . ' - ' . $data->contest ,
                 'pace'          =>  'PACE ' . $data->pace
@@ -72,6 +73,38 @@ class TagCheck extends Controller
         } else {
             $return['status']   =   400 ;
             $return['msg']      =   'Data failed to update' ;
+        }
+
+        return $return ;
+    }
+
+    public static function store(Request $request)
+    {
+        $data   =   $request->data ;
+
+        foreach ($data as $key => $value) {
+            $insert             =   new TagResult ;
+            $insert->bib        =   $value['bib'] ;
+            $insert->firstName  =   $value['firstName'] ;
+            $insert->lastName   =   $value['lastName'] ;
+            $insert->gender     =   $value['gender'] ;
+            $insert->type       =   $value['type'] ;
+            $insert->dob        =   $value['dob'] ;
+            $insert->age        =   $value['age'] ;
+            $insert->contest    =   $value['contest'] ;
+            $insert->race       =   $value['race'] ;
+            $insert->chipcode   =   $value['chipcode'] ;
+
+            $insert->save() ;
+        }
+
+        if ($insert) {
+            $return['status']   =   200 ;
+            $return['msg']      =   'Data inserted' ;
+            $return['data']     =   $data ;
+        } else {
+            $return['status']   =   400 ;
+            $return['msg']      =   'Data failed to insert' ;
         }
 
         return $return ;

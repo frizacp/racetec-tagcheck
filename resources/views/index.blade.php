@@ -25,7 +25,7 @@ function chipCode() {
         success: function(data) {
             if (data.status == 200) {
                 $("#resultBib").html(data.data.bib);
-                $("#resultName").html(data.data.name);
+                $("#resultName").html(data.data.firstName);
                 $("#resultTime").html(data.data.time);
                 $("#contest").html(data.data.contest);
                 $("#pace").html(data.data.pace);

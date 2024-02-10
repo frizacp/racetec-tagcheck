@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::controller(TagCheck::class)->group(function () {
     Route::get('/tagcheck', 'findall')->name('tagcheck.findall');
     Route::patch('/tagcheck', 'update')->name('tagcheck.update');
+    Route::post('/tagcheck', 'store')->name('tagcheck.store');
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
