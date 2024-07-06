@@ -12,7 +12,7 @@ function chipCode() {
     setTimeout(function() {
         $("#code").attr("disabled", false);
         $("#code").focus();
-    }, 5000);
+    }, 10000);
 
     $.ajax({
         url: "{{ route('tagcheck.index') }}",
@@ -25,7 +25,7 @@ function chipCode() {
         success: function(data) {
             if (data.status == 200) {
                 $("#resultBib").html(data.data.bib);
-                $("#resultName").html(data.data.firstName);
+                $("#resultName").html(data.data.lastName);
                 $("#resultTime").html(data.data.time);
                 $("#contest").html(data.data.contest);
                 $("#pace").html(data.data.pace);
@@ -47,7 +47,7 @@ function chipCode() {
 @section('header')
 <style>
 body {
-    background-image: url('/img/tag-check.jpg');
+    background-image: url('/img/bg-check.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -71,19 +71,20 @@ h2 {
 }
 
 h1 {
-    font-size: 200px!important
+    font-size: 140px!important
 }
 
 .bibTag {
-    margin-top: 320px
+    padding-top: 240px
 }
 </style>
 @endsection
 
 @section('content')
-<input type="text" class="border-0" autofocus autocomplete="off" id="code" onchange="chipCode()">
+<input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
+{{-- <input type="text" class="border-0" autofocus autocomplete="off" id="code" onchange="chipCode()"> --}}
 <div class="bibTag">
-    <div class="mb-3 text-center">
+    <div class="text-center">
         <h2 id="resultBib">####</h2>
         <h2 id="resultName">####</h2>
     </div>
