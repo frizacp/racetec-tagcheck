@@ -27,7 +27,7 @@ function chipCode() {
                 $("#resultBib").html(data.data.bib);
                 $("#resultName").html(data.data.lastName);
                 $("#resultTime").html(data.data.time);
-                $("#contest").html(data.data.contest);
+                $("#contest").html(data.data.contest + ' ' + data.data.category + ' ' + data.data.gender);
                 $("#pace").html(data.data.pace);
             } else {
                 $("#resultBib").html("Not Found");
