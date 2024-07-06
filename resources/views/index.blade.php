@@ -70,8 +70,14 @@ h2 {
     font-weight: bold!important;
 }
 
+h3 {
+    font-size: 50px!important;
+    margin: 0!important;
+    font-weight: bold!important;
+}
+
 h1 {
-    font-size: 140px!important
+    font-size: 100px!important
 }
 
 .bibTag {
@@ -84,16 +90,22 @@ h1 {
 <input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
 {{-- <input type="text" class="border-0" autofocus autocomplete="off" id="code" onchange="chipCode()"> --}}
 <div class="bibTag">
-    <div class="text-center">
-        <h2 id="resultBib">####</h2>
-        <h2 id="resultName">####</h2>
+    <div class="text-center mb-5">
+        <h2 class="text-uppercase" id="resultName">resultName</h2>
     </div>
 
-    <h1 class="text-center" id="resultTime">##:##:##</h1>
+    <div class="row">
+        <div class="col text-end">
+            <h3 class="text-uppercase" id="resultBib">resultBib</h3>
+            <h3 class="text-uppercase" id="contest">contest</h3>
+        </div>
+        <div class="col">
+            <h1 id="resultTime">resultTime</h1>
+        </div>
+    </div>
+
 
     <div class="text-center">
-        <h2 id="pace">####</h2>
-        <h2 id="contest">########</h2>
     </div>
 </div>
 @endsection
