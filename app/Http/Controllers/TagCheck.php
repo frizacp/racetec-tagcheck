@@ -24,7 +24,7 @@ class TagCheck extends Controller
                 'firstName'     =>  $data->firstName ,
                 'lastName'      =>  $data->lastName ,
                 'time'          =>  $data->finishtime ,
-                'contest'       =>  strtoupper($data->gender) . ' - ' . $data->contest ,
+                'contest'       =>  strtoupper($data->contest . ' ' . $data->category . ' ' . $data->gender)  ,
                 'pace'          =>  'PACE ' . $data->pace
             ] ;
 
