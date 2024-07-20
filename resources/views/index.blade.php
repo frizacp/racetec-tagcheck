@@ -47,11 +47,11 @@ function chipCode() {
 @section('header')
 <style>
 body {
-    background-image: url('/img/bg-check.png');
+    background-image: url('/img/bg_check.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    color: #000!important
+    color: #D99900!important;
 }
 
 input {
@@ -65,7 +65,7 @@ input:focus {
 }
 
 h2 {
-    font-size: 60px!important;
+    font-size: 55px!important;
     margin: 0!important;
     font-weight: bold!important;
 }
@@ -91,16 +91,13 @@ h1 {
 <input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
 {{-- <input type="text" class="border-0" autofocus autocomplete="off" id="code" onchange="chipCode()"> --}}
 <div class="bibTag">
-    <div class="text-center mb-4">
-        <h2 class="text-uppercase" style="color:yellow" id="resultName">resultName</h2>
-    </div>
-
-    <div class="row text-light">
-        <div class="col text-end">
-            <h3 class="text-uppercase mt-3" id="resultBib">resultBib</h3>
-            <h3 class="text-uppercase" id="contest">contest</h3>
+    <div class="row pt-5">
+        <div class="col-5 text-center">
         </div>
-        <div class="col">
+        <div class="col text-center">
+            <h2 class="text-uppercase" id="resultName">resultName</h2>
+            <h2 class="text-uppercase mt-3" id="resultBib">resultBib</h2>
+            <h3 class="text-uppercase" id="contest">contest</h3>
             <h1 id="resultTime">resultTime</h1>
         </div>
     </div>
@@ -110,3 +107,5 @@ h1 {
     </div>
 </div>
 @endsection
+
+{{-- 000000000000000000001002 --}}
