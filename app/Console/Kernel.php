@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('get:tias')->everyFiveMinutes();
+        $schedule->command('get:tias')->everyThreeMinutes();
     }
 
     /**
