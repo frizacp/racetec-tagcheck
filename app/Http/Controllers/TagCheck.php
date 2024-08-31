@@ -11,7 +11,7 @@ class TagCheck extends Controller
     public static function index(Request $request)
     {
         if ($request->key == 'show') {
-            $data   =   TagResult::where('chipcode', $request->code)->first();
+            $data   =   TagResult::where('chipcode', 'LIKE', $request->code)->first();
 
             if (!$data) {
                 $return['status']   =   400 ;
