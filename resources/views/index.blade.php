@@ -47,11 +47,11 @@ function chipCode() {
 @section('header')
 <style>
 body {
-    background-image: url('/img/bg_check.jpg');
+    background-image: url('/img/bg_check.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    color: #D99900!important;
+    color: #fff!important;
 }
 
 input {
@@ -89,23 +89,15 @@ h1 {
 
 @section('content')
 <input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
-{{-- <input type="text" class="border-0" autofocus autocomplete="off" id="code" onchange="chipCode()"> --}}
 <div class="bibTag">
-    <div class="row pt-5">
-        <div class="col-5 text-center">
-        </div>
-        <div class="col text-center">
-            <h2 class="text-uppercase" id="resultName">resultName</h2>
-            <h2 class="text-uppercase mt-3" id="resultBib">resultBib</h2>
-            <h3 class="text-uppercase" id="contest">contest</h3>
-            <h1 id="resultTime">resultTime</h1>
-        </div>
+    <div class="text-center mt-3">
+        <h2 class="text-uppercase" id="resultName">resultName</h2>
+        <h2 class="text-uppercase mt-3" id="resultBib">resultBib</h2>
+        <h3 class="text-uppercase" id="contest">contest</h3>
+        <h1 id="resultTime">resultTime</h1>
     </div>
-
 
     <div class="text-center">
     </div>
 </div>
 @endsection
-
-{{-- 000000000000000000001002 --}}
