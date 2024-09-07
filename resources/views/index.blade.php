@@ -90,7 +90,7 @@ h1 {
 @section('content')
 <input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
 <div class="bibTag">
-    <div class="text-center mt-3">
+    <div class="text-center">
         <h2 class="text-uppercase" id="resultName">resultName</h2>
         <h2 class="text-uppercase mt-3" id="resultBib">resultBib</h2>
         <h3 class="text-uppercase" id="contest">contest</h3>
