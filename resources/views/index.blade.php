@@ -82,7 +82,7 @@ h1 {
 }
 
 .bibTag {
-    padding-top: 370px
+    padding-top: 260px
 }
 </style>
 @endsection
