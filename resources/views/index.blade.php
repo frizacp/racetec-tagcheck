@@ -47,7 +47,7 @@ function chipCode() {
 @section('header')
 <style>
 body {
-    background-image: url('/img/bg_check.jpg');
+    background-image: url('/img/bg_check.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
