@@ -47,7 +47,7 @@ function chipCode() {
 @section('header')
 <style>
 body {
-    background-image: url('/img/psr24.jpg');
+    background-image: url('/img/bgcheck.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -82,7 +82,7 @@ h1 {
 }
 
 .bibTag {
-    padding-top: 260px
+    padding-top: 210px
 }
 </style>
 @endsection
