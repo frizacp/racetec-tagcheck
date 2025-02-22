@@ -47,7 +47,7 @@ function chipCode() {
 @section('header')
 <style>
 body {
-    background-image: url('/img/gembul25.jpg');
+    background-image: url('/img/TCR_2025.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
