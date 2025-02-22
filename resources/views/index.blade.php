@@ -51,7 +51,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    color: #fff!important;
+    color: #131416!important;
 }
 
 input {
