@@ -76,6 +76,17 @@ h3 {
     font-weight: bold!important;
 }
 
+h4 {
+    font-size: 75px!important;
+    margin: 0!important;
+    font-weight: bold!important;
+}
+h5 {
+    font-size: 40px!important;
+    margin: 0!important;
+    font-weight: bold!important;
+}
+
 h1 {
     font-size: 100px!important;
     font-weight: bold!important;
@@ -91,10 +102,11 @@ h1 {
 <input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
 <div class="bibTag">
     <div class="text-center">
-        <h2 class="text-uppercase" id="resultBib">resultBib</h2>
-        <h2 class="text-uppercase mt-3 mb-3" id="resultName" style="background-color: #00BCAA; padding-top: 50px; padding-bottom: 50px;">resultName</h2>
-        <h2 class="text-uppercase" id="contest">contest</h2>
-        <h1 id="resultTime">resultTime</h1>
+        <h3 class="text-uppercase">CONGRATULATION</h3>
+        <h4 class="text-uppercase">FINISHER</h4>
+        <h2 class="text-uppercase mt-3 mb-3" id="resultName" style="background-color: #FF275A; padding-top: 50px; padding-bottom: 50px;">resultName</h2>
+        <h5 class="text-uppercase" id="contest" style="color: #FF275A">contest</h5>
+        <h4 id="resultTime" style="color: #FF275A">resultTime</h4>
     </div>
 
     <div class="text-center">
