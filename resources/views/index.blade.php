@@ -47,7 +47,7 @@ function chipCode() {
 @section('header')
 <style>
 body {
-    background-image: url('/img/bg_qrispr25.jpg');
+    background-image: url('/img/bg_str25_2.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -101,14 +101,14 @@ h1 {
 @section('content')
 <input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
 <div class="bibTag">
-    <div class="text-center">
-        <img src="/img/logo_qrispr25.png" alt="Logo" style="max-width: 130px; margin-bottom: 10px;">
+    <div class="text-center mt-4">
+        <img src="/img/logo_str25.png" alt="Logo" style="max-width: 130px; margin-bottom: 10px;" class='mt-5'>
         <h4 class="text-uppercase mt-3 mb-3" style="background-color: #990000; color: #FFFFFF ; padding-top: 10px; padding-bottom: 10px;">CONGRATULATION</h4>
-        <h2 class="text-uppercase mt-3 mb-3" id="resultName" style="color: #CC9933">resultName</h2>
+        <h2 class="text-uppercase mt-3 mb-3" id="resultName" style="color: #FFFFFF">resultName</h2>
         <div class="d-flex justify-content-center align-items-center" style="gap: 60px; margin-top: 50px;">
             <div>
             <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">contest</h5>
-            <h2 class="text-uppercase" id="resultBib" style="color: #CC9933">bib</h2>
+            <h2 class="text-uppercase" id="resultBib" style="color: #FFFFFF">bib</h2>
             </div>
             <div style="border: 4px solid #FFFFFF; border-radius: 15px; padding: 20px;">
                 <h2 id="resultTime" style="color: #FFFFFF">resultTime</h2>
