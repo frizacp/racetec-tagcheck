@@ -102,8 +102,8 @@ h1 {
 <input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
 <div class="bibTag">
     <div class="text-center">
-        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 90vh;">
-            <h2 class="text-uppercase mt-3 mb-3" id="resultname" style="color: #FFFFFF">Name</h2>
+        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 80vh;">
+            <h2 class="text-uppercase mt-3" id="resultname" style="color: #FFFFFF">Name</h2>
             <h4 class="text-uppercase" id="resultBib" style="color: #FFFFFF">bib</h4>
             <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">contest</h5>
             </div>
