@@ -21,10 +21,10 @@ class TagCheck extends Controller
 
             $payload    =   [
                 'bib'           =>  $data->bib ,
-                'firstName'     =>  $data->firstName ,
-                'lastName'      =>  $data->lastName ,
+                'firstname'     =>  $data->firstname ,
+                'lastname'      =>  $data->lastname ,
                 'time'          =>  $data->finishtime ,
-                'contest'       =>  strtoupper($data->contest . ' ' . $data->gender . ' ' . $data->category)  ,
+                'contest'       =>  strtoupper($data->race . ' ' . $data->gender . ' ' . $data->category)  ,
                 'pace'          =>  'PACE ' . $data->pace
             ] ;
 
@@ -83,17 +83,24 @@ class TagCheck extends Controller
         $data   =   $request->data ;
 
         foreach ($data as $key => $value) {
-            $insert             =   new TagResult ;
-            $insert->bib        =   $value['bib'] ;
-            $insert->firstName  =   $value['firstName'] ;
-            $insert->lastName   =   $value['lastName'] ;
-            $insert->gender     =   $value['gender'] ;
-            $insert->type       =   $value['type'] ;
-            $insert->dob        =   $value['dob'] ;
-            $insert->age        =   $value['age'] ;
-            $insert->contest    =   $value['contest'] ;
-            $insert->race       =   $value['race'] ;
-            $insert->chipcode   =   $value['chipcode'] ;
+            $insert              =   new TagResult ;
+            $insert->id          = $value['id'];
+            $insert->bib         = $value['bib'];
+            $insert->firstname   = $value['firstname'];
+            $insert->lastname    = $value['lastname'];
+            $insert->gender      = $value['gender'];
+            $insert->type        = $value['type'];
+            $insert->dob         = $value['dob'];
+            $insert->age         = $value['age'];
+            $insert->contest     = $value['contest'];
+            $insert->category    = $value['category'];
+            $insert->race        = $value['race'];
+            $insert->chipcode    = $value['chipcode'];
+            $insert->finishclock = $value['finishclock'];
+            $insert->starttime   = $value['starttime'];
+            $insert->finishtime  = $value['finishtime'];
+            $insert->chiptime    = $value['chiptime'];
+            $insert->pace        = $value['pace'];
 
             $insert->save() ;
         }

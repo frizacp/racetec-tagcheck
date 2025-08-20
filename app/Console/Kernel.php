@@ -12,7 +12,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('get:tias')->everyTwoMinutes();
+        $schedule->command('get:tias')
+            ->everyTwoMinutes()
+            ->withoutOverlapping()
+            ->sendOutputTo(storage_path('logs/schedule.log'))
+            ->appendOutputTo(storage_path('logs/schedule.log')); // opsional kalau mau kirim email
     }
 
     /**
