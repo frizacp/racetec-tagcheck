@@ -65,19 +65,19 @@ input:focus {
 }
 
 h2 {
-    font-size: 55px!important;
+    font-size: 50px!important;
     margin: 0!important;
     font-weight: bold!important;
 }
 
 h3 {
-    font-size: 40px!important;
+    font-size: 35px!important;
     margin: 0!important;
     font-weight: bold!important;
 }
 
 h4 {
-    font-size: 75px!important;
+    font-size: 60px!important;
     margin: 0!important;
     font-weight: bold!important;
 }
@@ -103,9 +103,10 @@ h1 {
 <div class="bibTag">
     <div class="text-center">
         <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 80vh;">
-            <h2 class="text-uppercase mt-3" id="resultname" style="color: #FFFFFF">Name</h2>
-            <h4 class="text-uppercase" id="resultBib" style="color: #FFFFFF">bib</h4>
-            <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">contest</h5>
+            <h2 class="text-uppercase mt-3" id="resultname" style="color: #FFFFFF">NAME</h2>
+            <h4 class="text-uppercase" id="resultBib" style="color: #FFFFFF">BIB</h4>
+            <h3 class="text-uppercase" id="contest" style="color: #FFFFFF">CONTEST</h3>
+            <h4 class="text-uppercase" id="resultTime" style="color: #FFFFFF">RESULT</h4>
             </div>
         </div>
 {{--
