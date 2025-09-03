@@ -103,6 +103,7 @@ h1 {
 <div class="bibTag">
     <div class="text-center pt-3">
         <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
+            <h4 class="text-uppercase py-2 px-md-5 mt-5 mb-3" style="background-color: #FFFFFF; color: #DF1119;">ADNAN CELENG</h4>
             <h5 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h5>
             <h2 class="text-uppercase" id="resultBib" style="color: #FFFFFF">BIB</h2>
             <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">CONTEST</h5>
