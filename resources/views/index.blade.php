@@ -102,16 +102,9 @@ h1 {
 <input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
 <div class="bibTag">
     <div class="text-center pt-3">
-        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
-            <img src="/img/logo_sjsf25.png" alt="" class="mb-3 w-32">
-            <h5 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h5>
-            <h2 class="text-uppercase" id="resultBib" style="color: #FFFFFF">BIB</h2>
-            <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">CONTEST</h5>
-            </div>
-        </div>
-{{--
-        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
-            <h4 class="text-uppercase py-2 px-md-5 mt-5 mb-3" style="background-color: #FFFFFF; color: #DF1119;">CONGRATULATION</h4>
+            <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
+            <img src="/img/logo_sjsf25.png" alt="" class="w-32 mt-2">
+            <h4 class="text-uppercase py-2 px-md-5 mt-3 mb-3" style="background-color: #FFFFFF; color: #004300;">CONGRATULATION</h4>
             <h2 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h2>
             <div class="d-flex justify-content-center align-items-center" style="gap: 60px; margin-top: 35px;">
                 <div>
@@ -123,7 +116,20 @@ h1 {
                 </div>
             </div>
             </div>
+        </div>    
+    
+    
+    
+    {{--
+        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
+            <img src="/img/logo_sjsf25.png" alt="" class="mb-3 w-32">
+            <h5 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h5>
+            <h2 class="text-uppercase" id="resultBib" style="color: #FFFFFF">BIB</h2>
+            <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">CONTEST</h5>
+            </div>
         </div>
+
+
     --}}
     
 
