@@ -102,23 +102,8 @@
 @section('content')
 <input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
 <div class="bibTag">
-    <div class="text-center pt-3">
-        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
-            <img src="/img/logo_kaisr25.png" alt="" class="mb-3 w-32">
-            <h5 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h5>
-            <h2 class="text-uppercase" id="resultBib" style="color: #E46625">BIB</h2>
-            <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">CONTEST</h5>
-        </div>
-    </div>
-</div>
 
-
-
-{{--
-
-
-
-        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
+    <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
         <img src="/img/logo_kaisr25.png" alt="" class="w-32 mt-2">
         <h4 class="text-uppercase py-2 px-md-5 mt-5 mb-2" style="background-color: #E46625; color: #FFFFFF;">CONGRATULATION</h4>
         <h2 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h2>
@@ -132,6 +117,22 @@
             </div>
         </div>
     </div>
+</div>
+
+
+
+{{--
+
+
+    <div class="text-center pt-3">
+        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
+            <img src="/img/logo_kaisr25.png" alt="" class="mb-3 w-32">
+            <h5 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h5>
+            <h2 class="text-uppercase" id="resultBib" style="color: #E46625">BIB</h2>
+            <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">CONTEST</h5>
+        </div>
+    </div>
+
     --}}
 
 
