@@ -47,7 +47,7 @@
 @section('header')
 <style>
     body {
-        background-image: url('/img/kaisr25.png');
+        background-image: url('/img/kai25.webp');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top;
@@ -104,15 +104,15 @@
 <div class="bibTag">
 
     <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
-        <img src="/img/logo_kaisr25.png" alt="" class="w-32 mt-2">
+        <img src="/img/logo_kaisr25.png" alt="" class="w-40 mt-2">
         <h4 class="text-uppercase py-2 px-md-5 mt-5 mb-2" style="background-color: #E46625; color: #FFFFFF;">CONGRATULATION</h4>
         <h2 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h2>
-        <div class="d-flex justify-content-center align-items-center" style="gap: 60px; margin-top: 35px;">
+        <div class="flex justify-content-center align-items-center" style="gap: 60px; margin-top: 10px;">
             <div>
-                <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">CONTEST</h5>
-                <h2 class="text-uppercase" id="resultBib" style="color: #FFFFFF">BIB</h2>
+                <h5 class="text-uppercase text-center" id="contest" style="color: #FFFFFF">CONTEST</h5>
+                <h2 class="text-uppercase text-center" id="resultBib" style="color: #FFFFFF">BIB</h2>
             </div>
-            <div style="border: 4px solid #FFFFFF; border-radius: 15px; padding: 20px;">
+            <div style="border: 4px solid #FFFFFF; border-radius: 15px; padding: 20px; margin-top: 10px;">
                 <h2 id="resultTime" style="color: #FFFFFF">RESULT:TIME</h2>
             </div>
         </div>
