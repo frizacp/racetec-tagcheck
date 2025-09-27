@@ -113,7 +113,7 @@
                 <h2 class="text-uppercase text-center" id="resultBib" style="color: #FFFFFF">BIB</h2>
             </div>
             <div style="border: 4px solid #FFFFFF; border-radius: 15px; padding: 20px; margin-top: 10px;">
-                <h2 id="resultTime" style="color: #FFFFFF">RESULT:TIME</h2>
+                <h2 id="resultTime" style="color: #FFFFFF">RESULT : TIME</h2>
             </div>
         </div>
     </div>
