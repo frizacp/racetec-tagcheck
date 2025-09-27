@@ -103,22 +103,9 @@
 <input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
 <div class="bibTag">
 
-    <div class="text-center pt-3">
-        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
-            <h5 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h5>
-            <h2 class="text-uppercase" id="resultBib" style="color: #BE0101">BIB</h2>
-            <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">CONTEST</h5>
-        </div>
-    </div>
 
-</div>
-
-
-
-{{--
     <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
-        <img src="/img/logo_kaisr25.png" alt="" class="w-40 mt-2">
-        <h4 class="text-uppercase py-2 px-md-5 mt-5 mb-2" style="background-color: #E46625; color: #FFFFFF;">CONGRATULATION</h4>
+        <h4 class="text-uppercase py-2 px-md-5 mt-lg-5 mb-2" style="background-color: #BF0001; color: #FFFFFF;">CONGRATULATION</h4>
         <h2 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h2>
         <div class="flex justify-content-center align-items-center" style="gap: 60px; margin-top: 10px;">
             <div>
@@ -128,6 +115,19 @@
             <div style="border: 4px solid #FFFFFF; border-radius: 15px; padding: 20px; margin-top: 10px;">
                 <h2 id="resultTime" style="color: #FFFFFF">RESULT:TIME</h2>
             </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+{{--
+        <div class="text-center pt-3">
+        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
+            <h5 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h5>
+            <h2 class="text-uppercase" id="resultBib" style="color: #BE0101">BIB</h2>
+            <h5 class="text-uppercase" id="contest" style="color: #FFFFFF">CONTEST</h5>
         </div>
     </div>
 
