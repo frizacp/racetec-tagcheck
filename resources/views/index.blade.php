@@ -47,7 +47,7 @@
 @section('header')
 <style>
     body {
-        background-image: url('/img/broder.png');
+        background-image: url('/img/bg_white.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top;
@@ -107,10 +107,10 @@
     <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
         <div class="text-center pt-3">
             <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
-                <img src="/img/logo_broder.png" class="w-auto mb-3" style="height: 40px;" alt="Logo">
-                <h5 class="text-uppercase" id="resultname" style="color: #FFFFFF; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">NAME</h5>
-                <h2 class="text-uppercase" id="resultBib" style="color: #FFFFFF; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">BIB</h2>
-                <h5 class="text-uppercase" id="contest" style="color: #FFFFFF; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">CONTEST</h5>
+
+                <h5 class="text-uppercase" id="resultname" style="color: #181818; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">NAME</h5>
+                <h2 class="text-uppercase" id="resultBib" style="color: #181818; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">BIB</h2>
+                <h5 class="text-uppercase" id="contest" style="color: #181818; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">CONTEST</h5>
             </div>
         </div>
     </div>
@@ -121,7 +121,7 @@
 
 {{--
 
-
+ <img src="/img/logo_broder.png" class="w-auto mb-3" style="height: 40px;" alt="Logo">
     <h4 class="text-uppercase py-2 px-md-5 mt-lg-5 mb-2" style="background-color: #BF0001; color: #FFFFFF;">CONGRATULATION</h4>
         <h2 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h2>
         <div class="flex justify-content-center align-items-center" style="gap: 60px; margin-top: 10px;">
