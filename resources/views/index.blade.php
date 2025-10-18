@@ -1,162 +1,79 @@
-@extends('layouts.tagging')
+@php
+$events = [
+['slug' => 'slamet', 'name' => 'Slamet'],
+['slug' => 'bios25', 'name' => 'Biosfer 2025'],
+];
+@endphp
 
-@section('title', 'Tag Check')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('footer')
-<script>
-    function chipCode() {
-        var code = $("#code").val()
+<head>
+    <meta charset="UTF-8">
+    <title>Event Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        }
 
-        // setInterval #code disable for 5 second after scan tag to prevent duplicate
-        $("#code").attr("disabled", true);
-        setTimeout(function() {
-            $("#code").attr("disabled", false);
-            $("#code").focus();
-        }, 10000);
+        .dashboard {
+            text-align: center;
+        }
 
-        $.ajax({
-            url: "{{ route('tagcheck.index') }}",
-            type: "GET",
-            data: {
-                _token: "{{ csrf_token() }}",
-                code: code.substring(0, 24),
-                key: "show"
-            },
-            success: function(data) {
-                if (data.status == 200) {
-                    $("#resultBib").html(data.data.bib);
-                    $("#resultname").html(data.data.firstname + " " + data.data.lastname);
-                    $("#resultTime").html(data.data.time);
-                    $("#contest").html(data.data.contest);
-                    $("#pace").html(data.data.pace);
-                } else {
-                    $("#resultBib").html("Not Found");
-                    $("#resultName").html("Not Found");
-                    $("#resultTime").html("Not Found");
-                    $("#contest").html("Not Found");
-                    $("#pace").html("Not Found");
-                }
+        .title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
 
-                $("#code").val("")
-            }
-        });
-    };
-</script>
-@endsection
+        .event-container {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-@section('header')
-<style>
-    @font-face {
-        font-family: 'Gotham Ultra';
-        src: url('/fonts/Gotham_Ultra.otf') format('opentype');
-        font-weight: 700;
-        font-style: normal;
-    }
+        .event-btn {
+            min-width: 130px;
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 8px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
 
-    @font-face {
-        font-family: 'Gotham Ultra';
-        src: url('/fonts/Gotham_Ultra_Italic.ttf') format('opentype');
-        font-weight: 700;
-        font-style: italic;
-    }
+        .event-btn:hover {
+            background: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+        }
+    </style>
+</head>
 
-    body {
-        font-family: 'Gotham Ultra', sans-serif;
-        background-image: url('/img/bg_slamet.webp');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: top;
-        color: #131416 !important;
-    }
+<body>
 
-    input {
-        background-color: transparent !important;
-        color: transparent !important;
-    }
-
-    input:focus {
-        outline: none !important;
-        border: 0;
-    }
-
-    h2 {
-        font-family: 'Gotham Ultra', sans-serif !important;
-        font-size: 80px !important;
-        margin: 0 !important;
-        font-weight: bold !important;
-        font-style: italic !important;
-    }
-
-    h3 {
-        font-size: 35px !important;
-        margin: 0 !important;
-        font-weight: bold !important;
-    }
-
-    h4 {
-        font-size: 60px !important;
-        margin: 0 !important;
-        font-weight: bold !important;
-    }
-
-    h5 {
-        font-family: 'Gotham Ultra', sans-serif !important;
-        font-size: 40px !important;
-        margin: 0 !important;
-        font-weight: bold !important;
-        font-style: italic;
-    }
-
-    h1 {
-        font-size: 100px !important;
-        font-weight: bold !important;
-    }
-
-    .bibTag {
-        padding-top: 20px
-    }
-</style>
-@endsection
-
-@section('content')
-<input type="text" class="border-0" autofocus style="width: 100%; height: 100%; position: fixed" autocomplete="off" id="code" onchange="chipCode()">
-<div class="bibTag">
-
-
-    <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
-        <div class="text-center pt-2">
-            <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
-                <h2 class="text-uppercase" id="resultBib" style="color: #ffffff; ">BIB</h2>
-                <h5 class="text-uppercase" id="resultname" style="color: #FFFF00; ">NAME</h5>
-                <h5 class="text-uppercase" id="contest" style="color: #ffffff; ">CONTEST</h5>
-            </div>
+    <div class="dashboard">
+        <div class="title">🏁 Pilih Event Racetec</div>
+        <div class="event-container">
+            @foreach($events as $event)
+            <a href="{{ route('event.page', $event['slug']) }}" class="event-btn">
+                {{ $event['name'] }}
+            </a>
+            @endforeach
         </div>
     </div>
 
-</div>
+</body>
 
-
-
-{{--
-
- <img src="/img/logo_broder.png" class="w-auto mb-3" style="height: 40px;" alt="Logo">
-    <h4 class="text-uppercase py-2 px-md-5 mt-lg-5 mb-2" style="background-color: #BF0001; color: #FFFFFF;">CONGRATULATION</h4>
-        <h2 class="text-uppercase" id="resultname" style="color: #FFFFFF">NAME</h2>
-        <div class="flex justify-content-center align-items-center" style="gap: 60px; margin-top: 10px;">
-            <div>
-                <h5 class="text-uppercase text-center" id="contest" style="color: #FFFFFF">CONTEST</h5>
-                <h2 class="text-uppercase text-center" id="resultBib" style="color: #FFFFFF">BIB</h2>
-            </div>
-            <div style="border: 4px solid #FFFFFF; border-radius: 15px; padding: 20px; margin-top: 10px;">
-                <h2 id="resultTime" style="color: #FFFFFF">RESULT : TIME</h2>
-            </div>
-        </div>
-
-
-    --}}
-
-
-<div class="text-center">
-</div>
-</div>
-@endsection
+</html>

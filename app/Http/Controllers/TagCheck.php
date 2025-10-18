@@ -8,82 +8,105 @@ use Illuminate\Http\Request;
 
 class TagCheck extends Controller
 {
+    // === [1] DASHBOARD EVENT ===
+    public function dashboard()
+    {
+
+        return view('index');
+    }
+
+    // === [2] HALAMAN SCAN PER EVENT ===
+    public function event($slug)
+    {
+        $viewPath = "events.$slug"; // ex: events.borobudur
+
+        if (view()->exists($viewPath)) {
+            return view($viewPath, [
+                'eventName' => ucfirst($slug),
+            ]);
+        }
+
+        abort(404, "Event tidak ditemukan");
+    }
+
+    // === [3] ORIGINAL LOGIC KAMU (tetap sama) ===
     public static function index(Request $request)
     {
         if ($request->key == 'show') {
-            $data   =   TagResult::where('chipcode', 'LIKE', "%" . $request->code)->first();
+            $data = TagResult::where('chipcode', 'LIKE', "%" . $request->code)->first();
 
             if (!$data) {
-                $return['status']   =   400 ;
-                $return['msg']      =   'No data found' ;
-                return $return ;
+                return [
+                    'status' => 400,
+                    'msg' => 'No data found',
+                ];
             }
 
-            $payload    =   [
-                'bib'           =>  $data->bib ,
-                'firstname'     =>  $data->firstname ,
-                'lastname'      =>  $data->lastname ,
-                'time'          =>  $data->finishtime ,
-                'contest'       =>  strtoupper($data->race . ' ' . $data->gender . ' ' . $data->category)  ,
-                'pace'          =>  'PACE ' . $data->pace
-            ] ;
+            $payload = [
+                'bib'       => $data->bib,
+                'firstname' => $data->firstname,
+                'lastname'  => $data->lastname,
+                'time'      => $data->finishtime,
+                'contest'   => strtoupper($data->race . ' ' . $data->gender . ' ' . $data->category),
+                'pace'      => 'PACE ' . $data->pace,
+            ];
 
-            $return['status']   =   200 ;
-            $return['msg']      =   'Data found' ;
-            $return['data']     =   $payload ;
-            return $return ;
-
+            return [
+                'status' => 200,
+                'msg'    => 'Data found',
+                'data'   => $payload,
+            ];
         } else {
-            return view('index') ;
+            return view('index');
         }
     }
 
     public static function findall()
     {
-        $data   =   TagResult::all() ;
+        $data   =   TagResult::all();
 
         if (!$data) {
-            $return['status']   =   400 ;
-            $return['msg']      =   'No data found' ;
-            return $return ;
+            $return['status']   =   400;
+            $return['msg']      =   'No data found';
+            return $return;
         }
 
-        $return['status']   =   200 ;
-        $return['msg']      =   'Data found' ;
-        $return['data']     =   $data ;
-        return $return ;
+        $return['status']   =   200;
+        $return['msg']      =   'Data found';
+        $return['data']     =   $data;
+        return $return;
     }
 
     public static function update(Request $request)
     {
-        $data   =   $request->data ;
+        $data   =   $request->data;
 
         foreach ($data as $key => $value) {
             $update =   TagResult::where('chipcode', $value['chipcode'])->update([
-                'finishtime'    =>  $value['finishtime'] ,
-                'chiptime'      =>  $value['chiptime'] ,
-                'pace'          =>  $value['pace'] ,
-            ]) ;
+                'finishtime'    =>  $value['finishtime'],
+                'chiptime'      =>  $value['chiptime'],
+                'pace'          =>  $value['pace'],
+            ]);
         }
 
         if ($update) {
-            $return['status']   =   200 ;
-            $return['msg']      =   'Data updated' ;
-            $return['data']     =   $data ;
+            $return['status']   =   200;
+            $return['msg']      =   'Data updated';
+            $return['data']     =   $data;
         } else {
-            $return['status']   =   400 ;
-            $return['msg']      =   'Data failed to update' ;
+            $return['status']   =   400;
+            $return['msg']      =   'Data failed to update';
         }
 
-        return $return ;
+        return $return;
     }
 
     public static function store(Request $request)
     {
-        $data   =   $request->data ;
+        $data   =   $request->data;
 
         foreach ($data as $key => $value) {
-            $insert              =   new TagResult ;
+            $insert              =   new TagResult;
             $insert->id          = $value['id'];
             $insert->bib         = $value['bib'];
             $insert->firstname   = $value['firstname'];
@@ -102,18 +125,18 @@ class TagCheck extends Controller
             $insert->chiptime    = $value['chiptime'];
             $insert->pace        = $value['pace'];
 
-            $insert->save() ;
+            $insert->save();
         }
 
         if ($insert) {
-            $return['status']   =   200 ;
-            $return['msg']      =   'Data inserted' ;
-            $return['data']     =   $data ;
+            $return['status']   =   200;
+            $return['msg']      =   'Data inserted';
+            $return['data']     =   $data;
         } else {
-            $return['status']   =   400 ;
-            $return['msg']      =   'Data failed to insert' ;
+            $return['status']   =   400;
+            $return['msg']      =   'Data failed to insert';
         }
 
-        return $return ;
+        return $return;
     }
 }
