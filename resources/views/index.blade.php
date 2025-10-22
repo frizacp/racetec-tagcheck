@@ -2,6 +2,7 @@
 $events = [
 ['slug' => 'slamet', 'name' => 'Slamet'],
 ['slug' => 'bios25', 'name' => 'Biosfer 2025'],
+['slug' => 'ssr25', 'name' => 'SSR 2025'],
 ];
 @endphp
 
