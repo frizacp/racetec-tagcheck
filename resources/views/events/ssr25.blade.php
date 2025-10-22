@@ -4,15 +4,28 @@
 
 @section('footer')
 <script>
+    function showDefault() {
+        console.log("🔁 Kembali ke default view");
+
+        $("#resultname").html('<h1 id="blinkText" style="color:#FFFFFF;">Check bib here</h1>');
+        $("#contest").html("");
+        $("#resultBib").html("");
+        $("#resultTime").html("");
+        $("#pace").html("");
+
+        // pastikan box waktu disembunyikan
+        $("#resultSection").hide();
+    }
+
     function chipCode() {
         var code = $("#code").val();
+        console.log("📥 Input BIB Code:", code);
 
-        // Disable input 10 detik setelah scan, biar gak dobel
         $("#code").attr("disabled", true);
         setTimeout(function() {
             $("#code").attr("disabled", false);
             $("#code").focus();
-        }, 10000);
+        }, 5000);
 
         $.ajax({
             url: "{{ route('tagcheck.index') }}",
@@ -23,6 +36,10 @@
                 key: "show"
             },
             success: function(data) {
+                console.log("✅ Response dari server:", data);
+
+                clearTimeout(window.defaultTimer);
+
                 if (data.status == 200) {
                     $("#resultBib").html(data.data.bib);
                     $("#resultname").html(data.data.firstname + " " + data.data.lastname);
@@ -30,28 +47,40 @@
                     $("#contest").html(data.data.contest);
                     $("#pace").html(data.data.pace);
 
-                    // 🚀 Hide box jika waktu kosong/null
+                    console.log("🟢 Data ditemukan:", data.data);
+
+                    // ✅ perbaikan: hide / show langsung ke #resultSection
                     if (!data.data.time || data.data.time.trim() === "" || data.data.time === "00:00:00") {
-                        $("#resultTime").parent().hide();
+                        console.log("⚠️ Time kosong atau 00:00:00 → sembunyikan box result");
+                        $("#resultSection").hide();
                     } else {
-                        $("#resultTime").parent().show();
+                        $("#resultSection").show();
                     }
 
                 } else {
+                    console.log("🔴 Data tidak ditemukan");
                     $("#resultBib").html("Not Found");
                     $("#resultname").html("Not Found");
                     $("#resultTime").html("Not Found");
                     $("#contest").html("Not Found");
                     $("#pace").html("Not Found");
-
-                    // Tampilkan kembali box kalau error
-                    $("#resultTime").parent().show();
+                    $("#resultSection").show();
                 }
 
                 $("#code").val("");
+
+                // ⏳ Setelah 7 detik, balik ke tampilan default
+                window.defaultTimer = setTimeout(showDefault, 7000);
+            },
+            error: function(xhr, status, error) {
+                console.error("❌ AJAX Error:", status, error);
             }
         });
     }
+
+    $(document).ready(function() {
+        showDefault();
+    });
 </script>
 @endsection
 
@@ -90,6 +119,25 @@
         border: 0;
     }
 
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    h1 {
+        font-size: 80px !important;
+        animation: blink 3s infinite;
+    }
+
     h2 {
         font-family: 'Gotham Ultra', sans-serif !important;
         font-style: italic !important;
@@ -122,11 +170,6 @@
         font-style: italic;
     }
 
-    h1 {
-        font-size: 100px !important;
-        font-weight: bold !important;
-    }
-
     .img-logo {
         display: block;
         margin: 0 auto;
@@ -135,7 +178,7 @@
     }
 
     .bibTag {
-        padding-top: 20px
+        padding-top: 20px;
     }
 </style>
 @endsection
@@ -147,14 +190,14 @@
 <div class="bibTag">
     <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 85vh;">
         <div class="text-center pt-2">
-            <img src="/img/logo_ssr25.png" alt="SSR25 logo" class="img-logo">
+            <img src="/img/logo_ssr25.png" alt="SSR25 logo" class="img-logo" style="margin-bottom: 20px;">
             <h2 class="text-uppercase" id="resultname" style="color: #FFFF00;">NAMA</h2>
             <div class="d-flex justify-content-center align-items-center" style="gap: 60px; margin-top: 10px;">
                 <div>
-                    <h5 class="text-uppercase text-center" id="contest" style="color: #FFFFFF">KATEGORI</h5>
-                    <h3 class="text-uppercase" id="resultBib" style="color: #ffffff;">BIB</h3>
+                    <h5 class="text-uppercase text-center" id="contest" style="color: #FFFFFF"></h5>
+                    <h3 class="text-uppercase" id="resultBib" style="color: #ffffff;"></h3>
                 </div>
-                <div style="border: 4px solid #FFFFFF; border-radius: 15px; padding: 20px; margin-top: 10px;">
+                <div id="resultSection" style="border: 4px solid #FFFFFF; border-radius: 15px; padding: 20px; margin-top: 10px;">
                     <h4 id="resultTime" style="color: #FFFF00">RESULT : TIME</h4>
                 </div>
             </div>
