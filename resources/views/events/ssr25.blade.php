@@ -102,7 +102,7 @@
 
     body {
         font-family: 'Gotham Ultra', sans-serif;
-        background-image: url('/img/bg_slamet.webp');
+        background-image: url('/img/bg_ssr25.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top;
