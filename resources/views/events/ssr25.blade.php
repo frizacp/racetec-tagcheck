@@ -70,7 +70,7 @@
                 $("#code").val("");
 
                 // ⏳ Setelah 7 detik, balik ke tampilan default
-                window.defaultTimer = setTimeout(showDefault, 7000);
+                window.defaultTimer = setTimeout(showDefault, 14000);
             },
             error: function(xhr, status, error) {
                 console.error("❌ AJAX Error:", status, error);
