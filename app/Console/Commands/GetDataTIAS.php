@@ -16,7 +16,7 @@ class GetDataTIAS extends Command
     {
         try {
             // Ambil data dari API
-            $response = Http::timeout(10)->get('https://pickmyrace.frizacahya.com/getracetectagcheck');
+            $response = Http::timeout(60)->get('https://pickmyrace.frizacahya.com/getracetectagcheck');
 
             // Cek apakah response berhasil
             if ($response->failed()) {
