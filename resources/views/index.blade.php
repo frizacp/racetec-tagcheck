@@ -1,6 +1,7 @@
 @php
 $events = [
 ['slug' => 'votcha25', 'name' => 'VOTCHA 2025'],
+['slug' => 'jprun25', 'name' => 'JEPARUN 2025'],
 ];
 @endphp
 
